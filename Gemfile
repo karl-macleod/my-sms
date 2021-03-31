@@ -7,6 +7,9 @@ gem 'rails', '~> 3.2.0'
 
 gem 'mysql2', '~> 0.3.10'
 
+gem 'factory_bot_rails', '~> 4.11.1'
+gem 'faker', '~> 2.2.1'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
