@@ -26,7 +26,6 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  gem 'test-unit'
   gem 'pry'
   gem 'pry-rails'
 end
