@@ -26,7 +26,7 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  #rails console doesn't work without the 'test-case' gem.
+  #rails console doesn't work without the 'test-unit' gem.
   gem 'test-unit', '~> 3.0'
   gem 'pry'
   gem 'pry-rails'
