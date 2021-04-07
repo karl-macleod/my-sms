@@ -3,26 +3,23 @@ on: [push, pull_request]
 
 env:
   RUBY_VERSION: 2.3.5
-  MYSQL_DATABASE_HOST: localhost
-  MYSQL_USER: root
-  MYSQL_ROOT_PASSWORD: r00tp@ss
-  MYSQL_DATABASE: mysms_test
+  DB_HOST: localhost
+  DB_USER: root
+  DB_PASSWORD: r00tp@ss
   RAILS_ENV: test
 
 jobs:
   rspec-test:
     name: RSpec
     runs-on: ubuntu-16.04
-    env:
-      DB_HOST: ${{ env.MYSQL_DATABASE_HOST }}
-      DB_USER: ${{ env.MYSQL_USER }}
-      DB_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}      
 
     services:
         mysql:
           image: mysql:5.7
           ports:
             - 3306
+          env:
+            MYSQL_ROOT_PASSWORD: ${{ env.DB_PASSWORD }}      
 
     steps:
       - uses: actions/checkout@v2
