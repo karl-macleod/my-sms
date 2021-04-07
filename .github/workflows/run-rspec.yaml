@@ -7,6 +7,7 @@ env:
   MYSQL_USER: root
   MYSQL_ROOT_PASSWORD: r00tp@ss
   MYSQL_DATABASE: mysms_test
+  RAILS_ENV: test
 
 jobs:
   rspec-test:
@@ -24,16 +25,14 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
-      - name: Install MySQL client package 
-        run: sudo apt-get install libmysqlclient-dev       
+          ruby-version: ${{ env.RUBY_VERSION }}    
       - name: Install dependencies
         run: |
           gem install bundler -v 1.17
-          bundler install
+          bundle install
       - name: Initialize database
         run: |
-          bundler exec rails db:create RAILS_ENV=test
-          bundler exec rails db:migrate RAILS_ENV=test
+          bundle exec rails db:create
+          bundle exec rails db:migrate
       - name: Run tests
-        run: bundler exec rspec        
+        run: bundle exec rspec        
