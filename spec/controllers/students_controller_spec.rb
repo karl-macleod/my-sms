@@ -70,7 +70,7 @@ RSpec.describe StudentsController, type: :controller do
 
     it 'deletes the expected student' do
       subject
-      expect { Student.find(student.id) }.to raise_error(ActiveRecord::RecordNotFound)
+      expect { student.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end  
 end
