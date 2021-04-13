@@ -1,5 +1,4 @@
 class CreateTitles < ActiveRecord::Migration
-  DEFAULT_TITLES = %w[Miss, Mrs, Ms, Mr, Dr]
 
   def up
     # Create TITLES table.
@@ -11,11 +10,6 @@ class CreateTitles < ActiveRecord::Migration
 
     # Create unique index to prevent duplicate titles.
     add_index(:titles, :title, unique: true)
-
-    # Import initial data
-    DEFAULT_TITLES.each do |t|
-      Title.create(title: t)
-    end
   end
 
   def down
