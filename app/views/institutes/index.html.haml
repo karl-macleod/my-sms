@@ -1,0 +1,14 @@
+- content_for :title do
+  Institutes
+%h1
+  %i.fa.fa-building.fa-fw
+  Institutes
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th.col-lg-12{scope: "col"} Name
+  %tbody
+    - @institutes.each do |institute|
+      %tr
+        %td= institute.name
+= will_paginate @institutes, renderer: BootstrapPagination::Rails, previous_label: 'Prev', next_label: 'Next', bootstrap: 3

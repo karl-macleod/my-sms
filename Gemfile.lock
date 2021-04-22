@@ -51,6 +51,8 @@ GEM
     faker (2.2.1)
       i18n (>= 0.8)
     ffi (1.15.0)
+    foreigner (1.7.4)
+      activerecord (>= 3.0.0)
     haml (4.0.7)
       tilt
     haml-rails (0.4)
@@ -175,6 +177,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_bot_rails (~> 4.11.1)
   faker (~> 2.2.1)
+  foreigner (~> 1.7.4)
   haml-rails (~> 0.4.0)
   jquery-rails
   less-rails (~> 2.6.0)
