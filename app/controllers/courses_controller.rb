@@ -3,8 +3,8 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course
-    .order('start_date DESC, end_date DESC, name')
-    .paginate(page: params[:page], per_page: ApplicationHelper::PAGINATION_PAGE_SIZE)
+      .order('start_date DESC, end_date DESC, name')
+      .paginate(page: params[:page], per_page: ApplicationHelper::PAGINATION_PAGE_SIZE)
   end
 
   def show
