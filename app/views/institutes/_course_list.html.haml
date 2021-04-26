@@ -1,0 +1,7 @@
+%ul.list-group
+  - institute.courses.order(:name).each do |course|
+    %li.list-group-item
+      = course.name
+      &nbsp;
+      = link_to course_path(course) do
+        %i.fa.fa-search.text-muted
