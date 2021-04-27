@@ -12,6 +12,7 @@ gem 'faker', '~> 2.2.1'
 gem 'will_paginate', '~> 3.3.0'
 gem 'will_paginate-bootstrap'
 gem 'haml-rails', '~> 0.4.0'
+gem 'foreigner', '~> 1.7.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,6 +33,7 @@ gem 'jquery-rails'
 group :test, :development do
   #rails console doesn't work without the 'test-unit' gem.
   gem 'test-unit', '~> 3.0'
+  gem 'shoulda-matchers', '~> 2.8.0'
 
   gem 'rspec-rails', '~> 3.9.1'
   gem 'pry'

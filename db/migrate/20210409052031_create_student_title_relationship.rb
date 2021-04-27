@@ -4,7 +4,7 @@ class CreateStudentTitleRelationship < ActiveRecord::Migration
     change_table :students do |t|
       t.rename :title, :title_migrated
       
-      t.references :title, foreign_key: true
+      t.references :title
     end
     
     # Make nullable, since this is only for old data.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20210414063109) do
+ActiveRecord::Schema.define(:version => 20210427012334) do
 
   create_table "courses", :force => true do |t|
     t.string   "name",                :null => false
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(:version => 20210414063109) do
 
   add_index "courses", ["name"], :name => "index_courses_on_name", :unique => true
 
+  create_table "institutes", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.string   "title_migrated", :limit => 10
     t.string   "first_name"
@@ -39,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20210414063109) do
     t.integer  "title_id"
   end
 
+  add_index "students", ["title_id"], :name => "students_title_id_fk"
+
   create_table "titles", :force => true do |t|
     t.string   "title",      :limit => 10, :null => false
     t.datetime "created_at",               :null => false
@@ -46,5 +54,7 @@ ActiveRecord::Schema.define(:version => 20210414063109) do
   end
 
   add_index "titles", ["title"], :name => "index_titles_on_title", :unique => true
+
+  add_foreign_key "students", "titles", name: "students_title_id_fk"
 
 end
