@@ -20,7 +20,7 @@
     %tr
       %th{scope: "col"} Institute
       %td
-        = @course.institute&.name || '-'
+        = @course.institute_name || '-'
         - if (@course.institute)
           &nbsp;
           = link_to institute_path(@course.institute) do

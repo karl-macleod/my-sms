@@ -1,5 +1,5 @@
 %ul.list-group.course_list
-  - institute.courses.order(:name).each do |course|
+  - institute.course_listing.each do |course|
     %li.list-group-item
       = course.name
       &nbsp;
